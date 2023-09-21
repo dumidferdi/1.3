@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+/* Apply basic styles */
+body {
+    font-family: 'Arial', 'Gill Sans';
+    line-height: 1.8;
+    background: linear-gradient(to bottom, #03060b, #000004);
+    color: #090101;
+    overflow-x: hidden; 
+    align-items: center;
+}
+
+header {
+    background: #090000;
+    color: #2c2faf;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1a3d65;
+    font-weight:bolder;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: #162547;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color:rgb(22, 5, 147);
+    transform: translateY(-3px);
+}
+
+nav ul li a:hover:before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #a0a0b6;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(20, 2, 2, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #6e6969;
+}
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #0c0202;
+}
+p {
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align-last: center;
+    color: #0e0303;
+}
+p.b{
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-align-last: right;
+    color: #0b0101;
+   
+}
+
+button {
+    background: #957eda;
+    color: #d0aae4;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 4px;
+}
+
+button:hover {
+    background: #6e4d44;
+}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+
+@media (max-width: 700px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
