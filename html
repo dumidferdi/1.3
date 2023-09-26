@@ -1,0 +1,105 @@
+Certainly, here's the full HTML code with Vue Router integrated:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MY Portafolio</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router@3.5.2/dist/vue-router.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header>
+      <nav>
+        <div class="container">
+          <h1>MY Portafolio</h1>
+          <ul>
+            <li><router-link to="/about">Introduction to myself</router-link></li>
+            <br>
+            <li><router-link to="/task">Assignment I have done</router-link></li>
+            <br>
+            <li><router-link to="/contact">Contact Details</router-link></li>
+            <br>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <router-view></router-view>
+
+    <div class="container">
+      <p>&copy;Dumi 2023</p>
+    </div>
+  </div>
+
+  <script>
+    const About = {
+      template: `
+        <section id="about">
+          <div class="container">
+            <h2>Introduction to myself</h2>
+            <p>
+              I am Dumindra Ferdinandis
+              <br>
+              I am a student at Deakin University
+              <br>
+              I am from Sri Lanka, and I am 17 years old
+              <br>
+              Ambitious|Curious|Passionate|Organized ✨
+            </p>
+          </div>
+        </section>
+      `,
+    };
+
+    const Task = {
+      template: `
+        <section id="task">
+          <div class="container">
+            <h2>Assignment I have done</h2>
+            <div class="task">
+              <p>
+                Finding a creative website concept is my first effort as a student entering the profession of web development.
+                I have so far produced two websites using HTML, JavaScript, and CSS. In addition to these three coding languages, I also used Vue 3 for this website. I'll be showcasing how I've improved as a student.
+              </p>
+            </div>
+          </div>
+        </section>
+      `,
+    };
+
+    const Contact = {
+      template: `
+        <section id="contact">
+          <div class="container">
+            <h2>Contact Details</h2>
+            <p>
+              Phone number: +61 450 101 803
+              <br>
+              Email address: dumidferdinandis@gmail.com
+            </p>
+          </div>
+        </section>
+      `,
+    };
+
+    const router = new VueRouter({
+      routes: [
+        { path: '/', redirect: '/about' }, // Redirect root URL to the "about" section
+        { path: '/about', component: About },
+        { path: '/task', component: Task },
+        { path: '/contact', component: Contact },
+      ],
+    });
+
+    const app = new Vue({
+      el: '#app',
+      router,
+    });
+  </script>
+</body>
+</html>
